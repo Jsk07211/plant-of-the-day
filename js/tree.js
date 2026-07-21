@@ -35,7 +35,6 @@ function renderTree() {
         .join("");
       return `
         <section class="family-block">
-          <h2 class="family-name">${family}</h2>
           <ul class="tree">
             <li>${nodeHtml({ name: family, scientificName: "" }, true)}
               <ul>${rootsHtml}</ul>

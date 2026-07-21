@@ -48,7 +48,7 @@ body {
 }
 
 .banner h1 {
-  font-family: "Caveat", cursive;
+  font-family: "Short Stack", cursive;
   font-size: 3.2rem;
   color: var(--cream);
   margin: 0;
@@ -300,7 +300,7 @@ main {
 }
 
 .plant-name {
-  font-family: "Caveat", cursive;
+  font-family: "Short Stack", cursive;
   font-size: 1.6rem;
   margin: 0.5rem 0 0;
   color: var(--ink);
@@ -374,14 +374,6 @@ main {
 
 .family-block {
   margin-bottom: 2rem;
-}
-
-.family-name {
-  text-align: center;
-  font-family: "Caveat", cursive;
-  font-size: 2rem;
-  color: var(--frame);
-  margin-bottom: 0;
 }
 
 .tree,
@@ -482,7 +474,7 @@ main {
 .tree-node--root {
   background: var(--frame);
   color: var(--cream);
-  font-family: "Caveat", cursive;
+  font-family: "Short Stack", cursive;
   font-size: 1.4rem;
 }
 
