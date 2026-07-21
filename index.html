@@ -11,20 +11,30 @@
 <body>
   <header class="site-header">
     <div class="banner">
-      <h1>The Daily Pin</h1>
+      <h1 id="page-title">The Daily Pin</h1>
     </div>
-    <nav class="site-nav">
-      <a class="nav-link is-active" href="index.html">The Daily Pin</a>
-      <a class="nav-link" href="tree.html">The Family Tree</a>
+    <nav class="site-nav" role="tablist">
+      <button class="nav-tab nav-tab--daily is-active" data-view="daily" role="tab" aria-selected="true">The Daily Pin</button>
+      <button class="nav-tab nav-tab--tree" data-view="tree" role="tab" aria-selected="false">The Family Tree</button>
     </nav>
   </header>
 
   <main>
-    <p id="streak" class="streak"></p>
-    <div id="board" class="board"></div>
+    <div class="notebook-pages">
+      <section id="view-daily" class="view is-active">
+        <p id="streak" class="streak"></p>
+        <button id="flip-all" class="flip-all-btn" type="button">Flip All ↺</button>
+        <div id="board" class="board"></div>
+      </section>
+      <section id="view-tree" class="view">
+        <div id="tree-wrap" class="tree-wrap"></div>
+      </section>
+    </div>
   </main>
 
   <script src="js/plants.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/tree.js"></script>
+  <script src="js/router.js"></script>
 </body>
 </html>

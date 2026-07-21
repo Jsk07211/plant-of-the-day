@@ -71,4 +71,14 @@ function render() {
     .forEach((plant, i) => board.appendChild(cardElement(plant, i === 0)));
 }
 
-document.addEventListener("DOMContentLoaded", render);
+function setupFlipAll() {
+  const btn = document.getElementById("flip-all");
+  const board = document.getElementById("board");
+  btn.addEventListener("click", () => {
+    const cards = board.querySelectorAll(".card");
+    const shouldFlip = ![...cards].every((c) => c.classList.contains("flipped"));
+    cards.forEach((c) => c.classList.toggle("flipped", shouldFlip));
+    btn.textContent = shouldFlip ? "Flip Back All ↺" : "Flip All ↺";
+  });
+}
+

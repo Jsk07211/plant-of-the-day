@@ -19,7 +19,7 @@ function buildChildrenList(entries, parentId) {
     .join("")}</ul>`;
 }
 
-function render() {
+function renderTree() {
   const wrap = document.getElementById("tree-wrap");
   const families = {};
   PLANT_DECK.forEach((p) => {
@@ -46,5 +46,3 @@ function render() {
     })
     .join("");
 }
-
-document.addEventListener("DOMContentLoaded", render);
