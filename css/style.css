@@ -7,9 +7,11 @@
   --cream-edge: #f1e4c4;
   --ink: #4a3626;
   --ink-soft: #7a5f45;
-  --pin-red: #c0392b;
-  --pin-shine: #ff6f5e;
   --vine: #8a6239;
+  --tape: #dcd0a8;
+  --tape-stripe: #c9bb87;
+  --tape-green: #a9c98f;
+  --tape-green-stripe: #8fb372;
 
   --pothos: #4f7942;
   --philodendron: #2f6f6f;
@@ -117,40 +119,40 @@ body {
 
 .pin {
   position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, var(--pin-shine), var(--pin-red) 60%, #7a231a 100%);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.45);
+  top: -12px;
+  left: 14px;
+  width: 74px;
+  height: 28px;
+  background: repeating-linear-gradient(
+    118deg,
+    var(--tape) 0 9px,
+    var(--tape-stripe) 9px 11px
+  );
+  opacity: 0.88;
+  transform: rotate(-9deg);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(
+    0% 8%, 6% 0%, 14% 6%, 22% 1%, 30% 7%, 38% 2%, 46% 8%, 54% 1%,
+    62% 6%, 70% 0%, 78% 7%, 86% 2%, 94% 6%, 100% 0%,
+    100% 92%, 94% 100%, 86% 94%, 78% 99%, 70% 93%, 62% 100%,
+    54% 94%, 46% 99%, 38% 93%, 30% 100%, 22% 94%, 14% 99%, 6% 93%, 0% 100%
+  );
   z-index: 5;
+  backface-visibility: hidden;
 }
 
-.ribbon {
-  position: absolute;
-  top: 10px;
-  right: -8px;
-  background: var(--pin-red);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.6rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  z-index: 5;
+.card--today .pin {
+  background: repeating-linear-gradient(
+    118deg,
+    var(--tape-green) 0 9px,
+    var(--tape-green-stripe) 9px 11px
+  );
 }
 
-.ribbon::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: -6px;
-  border-width: 6px 6px 0 0;
-  border-style: solid;
-  border-color: #7a231a transparent transparent transparent;
+.card-back .pin {
+  left: auto;
+  right: 14px;
+  transform: rotate(9deg);
 }
 
 .card-inner {
@@ -185,7 +187,6 @@ body {
   transform: rotateY(180deg);
   align-items: flex-start;
   text-align: left;
-  overflow-y: auto;
 }
 
 .pin-date {
@@ -289,6 +290,12 @@ body {
 
 .card-back .features li {
   margin-bottom: 0.45rem;
+}
+
+.card-back .features {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 /* ---------- Family Tree page ---------- */
@@ -437,5 +444,10 @@ body {
   .card {
     width: 190px;
     height: 300px;
+  }
+  .pin {
+    width: 56px;
+    height: 22px;
+    left: 10px;
   }
 }

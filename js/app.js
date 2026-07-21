@@ -31,10 +31,9 @@ function cardElement(plant, isLatest) {
   const typeClass = `tag--${plant.type.toLowerCase()}`;
 
   el.innerHTML = `
-    <div class="pin" aria-hidden="true"></div>
-    ${isLatest ? '<div class="ribbon">Latest</div>' : ""}
     <div class="card-inner">
       <div class="card-face card-front">
+        <div class="pin" aria-hidden="true"></div>
         <span class="pin-date">${formatPinDate(plant.date)}</span>
         <div class="photo">
           <img src="${plant.image}" alt="${plant.name}" loading="lazy"
@@ -46,6 +45,7 @@ function cardElement(plant, isLatest) {
         <p class="flip-hint">tap to flip ↺</p>
       </div>
       <div class="card-face card-back">
+        <div class="pin" aria-hidden="true"></div>
         <h4>Special Features</h4>
         <ul class="features">
           ${plant.features.map((f) => `<li>${f}</li>`).join("")}
